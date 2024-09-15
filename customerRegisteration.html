@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="CustomerStyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Customer Registration Form</h2>
+      <form id="customerForm" onsubmit="return registerCustomer()">
+        <label for="ssn">Customer SSN (Non-Editable After Registration)</label>
+        <input type="text" id="ssn" maxlength="9" required />
+
+        <label for="name">Customer Name</label>
+        <input type="text" id="name" maxlength="50" required />
+
+        <label for="accountNumber">Account Number</label>
+        <input type="text" id="accountNumber" maxlength="12" required />
+
+        <label for="ifscCode">IFSC Code</label>
+        <input type="text" id="ifscCode" maxlength="11" required />
+
+        <label for="balance">Account Balance</label>
+        <input type="number" id="balance" min="0" required />
+
+        <label for="aadhaar">Aadhaar Number</label>
+        <input type="text" id="aadhaar" maxlength="12" required />
+
+        <label for="pan">PAN Number</label>
+        <input type="text" id="pan" maxlength="10" required />
+
+        <button type="button" onclick="viewDetailsBeforeDelete()">
+          View Details Before Delete
+        </button>
+        <button type="submit">Register</button>
+      </form>
+
+      <div id="message"></div>
+
+      <div id="customerDetails" class="hidden">
+        <h3>Customer Details</h3>
+        <p>SSN: <span id="displaySSN"></span></p>
+        <p>Name: <span id="displayName"></span></p>
+        <p>Account Number: <span id="displayAccount"></span></p>
+        <p>IFSC Code: <span id="displayIFSC"></span></p>
+        <p>Account Balance: <span id="displayBalance"></span></p>
+        <p>Aadhaar Number: <span id="displayAadhaar"></span></p>
+        <p>PAN Number: <span id="displayPAN"></span></p>
+
+        <button onclick="enableAndUpdateCustomer()">Enable/Update</button>
+      </div>
+
+      <div id="deleteConfirmation" class="hidden">
+        <h3>Are you sure you want to delete these details?</h3>
+        <button onclick="deleteCustomer()">Confirm Delete</button>
+        <button
+          onclick="document.getElementById('deleteConfirmation').classList.add('hidden')"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <script src="customerScript.js"></script>
+  </body>
+</html>

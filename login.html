@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Employee Login</h2>
+      <form action="Home.html" id="loginForm" onsubmit="return loginEmployee()">
+        <label for="loginEmployeeId">Employee ID</label>
+        <input type="text" id="loginEmployeeId" required />
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <div id="loginMessage" class="hidden">
+        <h3 id="loginResult"></h3>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>
