@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="customer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Customer Registration Form</h2>
+      <form id="customerForm" onsubmit="return registerCustomer(event)">
+        <label for="ssn">Customer SSN ID (not editable):</label>
+        <input type="text" id="ssn" name="ssn" required value="123-45-6789" />
+
+        <label for="name">Customer Name:</label>
+        <input type="text" id="name" name="name" maxlength="50" required />
+
+        <label for="accountNumber">Account Number:</label>
+        <input
+          type="text"
+          id="accountNumber"
+          name="accountNumber"
+          maxlength="12"
+          required
+        />
+
+        <label for="ifscCode">IFSC Code:</label>
+        <input
+          type="text"
+          id="ifscCode"
+          name="ifscCode"
+          maxlength="11"
+          required
+        />
+
+        <label for="balance">Account Balance:</label>
+        <input type="number" id="balance" name="balance" required />
+
+        <label for="aadhaar">Aadhaar Card No.:</label>
+        <input
+          type="text"
+          id="aadhaar"
+          name="aadhaar"
+          maxlength="12"
+          required
+        />
+
+        <label for="pan">PAN Card No.:</label>
+        <input type="text" id="pan" name="pan" maxlength="10" required />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="maritalStatus">Marital Status:</label>
+        <select id="maritalStatus" name="maritalStatus" required>
+          <option value="">Select</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          name="address"
+          maxlength="100"
+          required
+        ></textarea>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input
+          type="tel"
+          id="contactNumber"
+          name="contactNumber"
+          pattern="[0-9]{10}"
+          required
+        />
+        <button type="submit">Register</button>
+        <button onclick="viewDetails()">View Details</button>
+      </form>
+
+      <div class="message" id="message"></div>
+
+      <!-- Display customer details -->
+      <div id="customerDetails" class="hidden">
+        <h3>Customer Details</h3>
+        <p>SSN: <span id="displaySSN"></span></p>
+        <p>Name: <span id="displayName"></span></p>
+        <p>Account Number: <span id="displayAccount"></span></p>
+        <p>IFSC Code: <span id="displayIFSC"></span></p>
+        <p>Balance: <span id="displayBalance"></span></p>
+        <p>Aadhaar: <span id="displayAadhaar"></span></p>
+        <p>PAN: <span id="displayPAN"></span></p>
+        <p>DOB: <span id="displayDOB"></span></p>
+        <p>Gender: <span id="displayGender"></span></p>
+        <p>Marital Status: <span id="displayMaritalStatus"></span></p>
+        <p>Email: <span id="displayEmail"></span></p>
+        <p>Address: <span id="displayAddress"></span></p>
+        <p>Contact Number: <span id="displayContact"></span></p>
+
+        <button onclick="enableAndUpdateCustomer()">Enable/Update</button>
+        <button onclick="deleteCustomer()">Delete</button>
+      </div>
+    </div>
+
+    <script src="customerScript.js"></script>
+  </body>
+</html>

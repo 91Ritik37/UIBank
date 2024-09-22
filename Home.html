@@ -3,13 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Bank Management Dashboard</title>
+    <link rel="stylesheet" href="home.css" />
   </head>
   <body>
-    <div class="container">
+
+    <div class="container"></div>
       <h2>Welcome, <span id="currentUser"></span></h2>
       <p>This is your home page.</p>
     </div>
+    <script src="home.js"></script>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="brand">Bank Management</a>
+        <ul class="nav-links">
+          <li><a href="#customer-management">Customer Management</a></li>
+          <li><a href="#loan-management">Loan Management</a></li>
+          <li><a href="#transaction-management">Transaction Management</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Sections -->
+    <section id="customer-management" class="section">
+      <h2>Customer Management</h2>
+      <p>Manage customer data including registration, updates, and more.</p>
+      <button onclick="window.location.href='customer.html'">
+        Go to Customer Management
+      </button>
+    </section>
+
+    <section id="loan-management" class="section">
+      <h2>Loan Management</h2>
+      <p>Handle loan applications, approvals, and disbursements.</p>
+      <button onclick="window.location.href='loan.html'">
+        Go to Loan Management
+      </button>
+    </section>
+
+    <section id="transaction-management" class="section">
+      <h2>Transaction Management</h2>
+      <p>Monitor and track customer transactions and histories.</p>
+      <button onclick="window.location.href='transaction.html'">
+        Go to Transaction Management
+      </button>
+    </section>
+
     <script src="home.js"></script>
   </body>
 </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction Management</title>
+    <link rel="stylesheet" href="transaction.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Transaction Management</h1>
+
+      <!-- Transaction Form -->
+      <form id="transactionForm">
+        <h2>Capture Transaction Information</h2>
+
+        <label for="transactionId">Transaction ID (Auto-generated)</label>
+        <input type="text" id="transactionId" readonly />
+
+        <label for="customerSsnId">Customer SSN ID</label>
+        <input type="text" id="customerSsnId" maxlength="9" required />
+
+        <label for="customerName">Customer Name</label>
+        <input type="text" id="customerName" required />
+
+        <label for="accountId">Account Number</label>
+        <input type="text" id="accountId" maxlength="12" required />
+
+        <label for="aadhaarCard">Aadhaar Card No.</label>
+        <input type="text" id="aadhaarCard" maxlength="12" required />
+
+        <label for="panCard">PAN Card No.</label>
+        <input type="text" id="panCard" maxlength="10" required />
+
+        <label for="address">Address</label>
+        <textarea id="address" required></textarea>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" required />
+
+        <label for="contactNumber">Contact Number</label>
+        <input type="tel" id="contactNumber" required />
+
+        <label for="modeOfTransaction">Mode of Transaction</label>
+        <select id="modeOfTransaction" required>
+          <option value="Cash">Cash</option>
+          <option value="Online">Online</option>
+          <option value="Cheque">Cheque</option>
+        </select>
+
+        <label for="amount">Amount of Transaction</label>
+        <input type="number" id="amount" required />
+
+        <label for="transactionType">Types of Card Credit/Debit</label>
+        <select id="transactionType" required>
+          <option value="Credit">Credit</option>
+          <option value="Debit">Debit</option>
+        </select>
+
+        <button type="submit">Submit Transaction</button>
+      </form>
+
+      <!-- Transaction Search -->
+      <div id="searchSection">
+        <h2>Search Transactions by Customer ID</h2>
+        <input
+          type="text"
+          id="customerIdSearch"
+          placeholder="Enter Customer ID"
+        />
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <!-- Search Results -->
+      <div id="transactionResults">
+        <h3>Transaction Results</h3>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Transaction ID</th>
+              <th>Customer SSN ID</th>
+              <th>Account ID</th>
+              <th>Mode of Transaction</th>
+              <th>Amount</th>
+              <th>Credit/Debit</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody">
+            <!-- Results will be populated here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="transaction.js"></script>
+  </body>
+</html>
